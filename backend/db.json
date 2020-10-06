@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Samuel Marques",
+      "phone": "81994556776",
+      "address": "Av. da República",
+      "admission": "12/10/2020"
+    },
+    {
+      "id": 2,
+      "name": "Maria Sofia",
+      "phone": "81999356728",
+      "address": "Rua Mariano Ricardo da Costa",
+      "admission": "18/10/2020"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "Python Ninja",
+      "description": "Torne-se um Desenvolvedor Python nível ninja blaster master fodástico.",
+      "duration": "20 hours",
+      "price": "200,00",
+      "users": []
+    },
+    {
+      "id": 2,
+      "title": "AngularJS para Desenvolvedores React",
+      "description": "Alô você que está migrando por causa de um trabalho para AngularJS, esse curso é pra você!",
+      "duration": "10 hours",
+      "price": "",
+      "users": [
+        {
+          "id": 1,
+          "name": "Samuel Marques",
+          "phone": "81994556776",
+          "address": "Av. da República",
+          "admission": "12/10/2020"
+        }
+      ]
+    }
+  ]
+}
