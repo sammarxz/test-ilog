@@ -1,0 +1,12 @@
+<td>
+  <div class="form-group">
+    <label class="form-checkbox">
+      <input type="checkbox" ng-model="user.selected">
+      <i class="form-icon"></i>
+    </label>
+  </div>
+</td>
+<td>{{ user.name | ellipsis: 20 }}</td>
+<td>{{ user.phone }}</td>
+<td>{{ user.address | ellipsis: 15 }}</td>
+<td>{{ user.admission | date: 'dd/MM/yyyy'}}</td>

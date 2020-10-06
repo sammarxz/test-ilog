@@ -1,0 +1,34 @@
+/* LAYOUT */
+.header a:hover {
+  text-decoration: none;
+}
+
+.header-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav ul li a {
+  color: currentColor
+}
+
+.header-nav ul li a.active,
+.header-nav ul li a:hover {
+  color: #5755d9;
+  text-decoration: none;
+}
+
+
+/* HELPERS */
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.lh-1 {
+  line-height: 1;
+}

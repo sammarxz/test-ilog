@@ -3,16 +3,23 @@
     {
       "id": 1,
       "name": "Samuel Marques",
-      "phone": "81994556776",
+      "phone": "(81) 99455-6776",
       "address": "Av. da República",
       "admission": "12/10/2020"
     },
     {
       "id": 2,
-      "name": "Maria Sofia",
-      "phone": "81999356728",
+      "name": "Sofia",
+      "phone": "(81) 99935-6728",
       "address": "Rua Mariano Ricardo da Costa",
       "admission": "18/10/2020"
+    },
+    {
+      "name": "Bruna Castro",
+      "phone": "(81) 99999-9999",
+      "address": "Alguma coisa",
+      "admission": "02/02/2020",
+      "id": 3
     }
   ],
   "courses": [
