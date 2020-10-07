@@ -65,6 +65,10 @@ angular.module('webnautas').controller('courseDetailCtrl', ($scope, $stateParams
     })
   }
 
+  $scope.generatePDF = function() {
+    window.print();
+  }
+
   loadCourse($scope.id);
   loadUsers();
 });

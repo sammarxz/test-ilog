@@ -33,6 +33,13 @@
   margin-top: 80px;
 }
 
-.lh-1 {
-  line-height: 1;
+@media print {    
+    .no-print, 
+    .no-print * {
+        display: none !important;
+    }
+
+    .course-detail-table {
+      margin-top: 0px;
+    }
 }
