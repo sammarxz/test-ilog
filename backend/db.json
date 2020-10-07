@@ -4,22 +4,14 @@
       "id": 1,
       "name": "Samuel Marques",
       "phone": "(81) 99455-6776",
-      "address": "Av. da República",
+      "address": "Av. Mariano Ricardo da Costa",
       "admission": "12/10/2020"
     },
     {
-      "id": 2,
-      "name": "Sofia Marques",
-      "phone": "(81) 99935-6728",
-      "address": "Rua Mariano Ricardo da Costa",
-      "admission": "18/10/2020",
-      "selected": false
-    },
-    {
-      "name": "Bruna Castro",
+      "name": "Bruna Letícia",
       "phone": "(81) 99999-9999",
       "address": "Av. da República",
-      "admission": "02/02/2020",
+      "admission": "02/05/2020",
       "id": 3
     }
   ],
@@ -30,7 +22,15 @@
       "description": "Torne-se um Desenvolvedor Python nível ninja blaster master fodástico.",
       "duration": "20 hours",
       "price": "200,00",
-      "users": []
+      "users": [
+        {
+          "id": 1,
+          "name": "Samuel Marques",
+          "phone": "(81) 99455-6776",
+          "address": "Av. Mariano Ricardo da Costa",
+          "admission": "12/10/2020"
+        }
+      ]
     },
     {
       "id": 2,
@@ -40,19 +40,35 @@
       "price": "",
       "users": [
         {
+          "name": "Bruna Letícia",
+          "phone": "(81) 99999-9999",
+          "address": "Av. da República",
+          "admission": "02/05/2020",
+          "id": 3
+        },
+        {
           "id": 1,
           "name": "Samuel Marques",
-          "phone": "81994556776",
-          "address": "Av. da República",
+          "phone": "(81) 99455-6776",
+          "address": "Av. Mariano Ricardo da Costa",
           "admission": "12/10/2020"
         }
       ]
     },
     {
-      "title": "Python para fodinhas",
-      "description": "Python só pra quem manja dos paranauê",
+      "title": "Youtube para quem não tem o que fazer",
+      "description": "Se você tá em casa e quer ficar rico de boas, só vem",
       "duration": "20 horas",
-      "users": [],
+      "price": "999,00",
+      "users": [
+        {
+          "name": "Bruna Letícia",
+          "phone": "(81) 99999-9999",
+          "address": "Av. da República",
+          "admission": "02/05/2020",
+          "id": 3
+        }
+      ],
       "id": 3
     }
   ]

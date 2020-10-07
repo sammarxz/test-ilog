@@ -1,0 +1,70 @@
+<section ng-controller="courseDetailCtrl">
+  <ui-navbar title="{{course.title}}">
+    <button class="btn">
+      Gerar PDF
+    </button>
+  </ui-navbar>
+  <div class="mt-40">
+    <div class="columns">
+      <div class="column col-5">
+        <h2 class="h6 text-primary">Descrição</h2>
+        <p>{{ course.description }}</p>
+      </div>
+      <div class="column"></div>
+      <div class="column col-3">
+        <h2 class="h6 text-primary">Carga Horária</h2>
+        <p>{{ course.duration }}</p>
+      </div>
+      <div class="column col-3">
+        <h2 class="h6 text-primary">Preço</h2>
+        <p>{{ course.price || 'Grátis' }}</p>
+      </div>
+    </div>
+  </div>  
+  <div class="">
+    <div class="navbar mt-40">
+      <div class="navbar-section">
+        <h3 class="h6 text-primary">Alunos:</h3>
+      </div>
+      <div class="navbar-section">
+        <div class="input-group input-inline" ng-hide="showForm">
+          <input class="form-input mr-2" type="text" ng-model="searchUser" placeholder="Buscar Aluno...">
+          <button class="btn btn-primary" ng-click="setShowForm()">Adicionar Aluno</button>
+        </div>
+        <div ng-show="showForm">
+          <div class="input-group input-inline">
+            <select class="form-select mr-2" ng-model="user.id">
+              <option value="">Selecione um aluno</option>
+              <option value="{{ user.id }}" ng-repeat="user in users | usersNotIn: course.users">{{ user.name }}</option>
+            </select>
+            <button class="btn btn-success mr-2" ng-click="addUser(user.id)">
+              <i class="icon icon-check"></i> Adicionar
+            </button>
+            <button class="btn btn-error btn-action" ng-click="setShowForm()">
+              <i class="icon icon-cross"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="table mt-40">
+      <thead>
+        <tr>
+          <th><a ng-click="orderBy('name')" class="text-dark">Nome</a></th>
+          <th>Telefone</th>
+          <th>Endereço</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="user in course.users | filter: {name: searchUser} | orderBy: order || 'name':direction"
+          ng-class="{active: user.selected, has-error: error}" ng-model="user">
+          <td>{{ user.name | ellipsis: 20 }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.address | ellipsis: 20 }}</td>
+          <td><button class="btn btn-action btn-error" ng-click="deleteUser(user.id)"><i class="icon icon-delete"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

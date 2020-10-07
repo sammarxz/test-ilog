@@ -1,20 +1,15 @@
 <section ng-controller="usersCtrl">
-  <div class="navbar">
-    <div class="navbar-section">
-      <h1 class="m-0 lh-1 h2">Usuários</h1>
+  <ui-navbar title="Alunos">
+    <div class="input-group input-inline">
+      <input class="form-input mr-2" type="text" ng-model="searchUser" placeholder="Buscar...">
+      <button class="btn btn-primary" ng-click="setShowForm()">Novo Usuário</button>
+      <button class="btn btn-error btn-action ml-2" ng-show="isSelected(users)" ng-click="removeUsers(users)">
+        <i class="icon icon-delete"></i>
+      </button>
     </div>
-    <div class="navbar-section">
-      <div class="input-group input-inline">
-        <input class="form-input mr-2" type="text" ng-model="searchUser" placeholder="Buscar...">
-        <button class="btn btn-primary" ng-click="setShowForm()">Novo Usuário</button>
-        <button class="btn btn-error btn-action ml-2" ng-show="isSelected(users)" ng-click="removeUsers(users)">
-          <i class="icon icon-delete"></i>
-        </button>
-      </div>
-    </div>
-  </div>
+  </ui-navbar>
   <div ng-show="loading" class="loading loading-lg mt-80"></div>
-  <table ng-hide="loading" class="table mt-40">
+  <table ng-hide="loading" class="table mt-40 table-hover">
     <thead>
       <tr>
         <th></th>
@@ -25,11 +20,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-show="showForm" ng-keydown="addUser($event, user)" ng-include="'view/user/form.html'">
-        </div>
+      <tr ng-show="showForm" ng-keydown="addUser($event, user)" ng-include="'view/user/form.html'"></tr>
       <tr ng-repeat="user in users | filter: {name: searchUser} | orderBy: order || 'name':direction"
         ng-class="{active: user.selected, has-error: error}" ng-keydown="editUser($event, user)"
-        ng-dblclick="setShowForm(user)" ng-include="showUser(user)"></tr>
+        ng-dblclick="setShowForm(user)" ng-include="showView(user, 'user')"></tr>
     </tbody>
   </table>
 </section>

@@ -1,6 +1,10 @@
 angular.module('webnautas').factory('webnautasAPI', ($http, config) => {
-  const _getUsers = () =>{
+  const _getUsers = () =>{ 
     return $http.get(`${config.baseUrl}/users`)
+  }
+
+  const _getUser = (id) => {
+    return $http.get(`${config.baseUrl}/users/${id}`)
   }
 
   const _addUser = (user) => {
@@ -15,8 +19,12 @@ angular.module('webnautas').factory('webnautasAPI', ($http, config) => {
     return $http.delete(`${config.baseUrl}/users/${id}`)
   }
 
-  const _getCourses = () =>{
+  const _getCourses = () => {
     return $http.get(`${config.baseUrl}/courses`)
+  }
+
+  const _getCourse = (id) => {
+    return $http.get(`${config.baseUrl}/courses/${id}`)
   }
 
   const _addCourse = (course) => {
@@ -33,10 +41,12 @@ angular.module('webnautas').factory('webnautasAPI', ($http, config) => {
 
   return {
     getUsers: _getUsers,
+    getUser: _getUser,
     addUser: _addUser,
     updateUser: _updateUser,
     deleteUser: _deleteUser,
     getCourses: _getCourses,
+    getCourse: _getCourse,
     addCourse: _addCourse,
     updateCourse: _updateCourse,
     deleteCourse: _deleteCourse

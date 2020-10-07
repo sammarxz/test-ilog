@@ -6,7 +6,7 @@
     </label>
   </div>
 </td>
-<td>{{ course.title | ellipsis: 20 }}</td>
+<td><a ui-sref="coursesDetail({id: course.id})">{{ course.title | ellipsis: 20 }}</a></td>
 <td>{{ course.description | ellipsis: 20 }}</td>
 <td>{{ course.duration }}</td>
 <td>{{ course.price || 'Grátis' }}</td>

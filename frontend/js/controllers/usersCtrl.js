@@ -6,35 +6,13 @@ angular.module('webnautas').controller('usersCtrl', ($scope, webnautasAPI) => {
         $scope.users = users;
         $scope.loading = false;
       }
-    }, function (error){
-      console.error(error);
-    });
+    })
+    .catch(error => {
+      console.error(error)
+    })
   }
 
-  $scope.showForm = false;
   $scope.loading = true;
-
-  $scope.isSelected = function(users) {
-    if (users) {
-      return users.some(function(user) {
-        return user.selected;
-      });
-    }
-    return;
-  }
-
-  $scope.setShowForm = function(user) {
-    if (!user) {
-      $scope.showForm = !$scope.showForm;
-    } else {
-      user.editing = !user.editing;
-    }
-  }
-
-  $scope.showUser = function(user) {
-    if (user.editing) return 'view/user/form.html'
-    else return 'view/user/display.html';
-  }
 
   $scope.orderBy = function(type) {
     $scope.direction = !$scope.direction
@@ -44,7 +22,7 @@ angular.module('webnautas').controller('usersCtrl', ($scope, webnautasAPI) => {
   $scope.addUser = function(keyEvent, user) {
     if (keyEvent.which === 13) {
       if (user.name && user.phone && user.address && user.admission) {
-        usersAPI.addUser(user)
+        webnautasAPI.addUser(user)
         .then((response) => {
           if (response.status === 200) {
             delete $scope.user;
@@ -62,7 +40,7 @@ angular.module('webnautas').controller('usersCtrl', ($scope, webnautasAPI) => {
   $scope.editUser = function(keyEvent, user) {
     if (keyEvent.which === 13) {
       delete user.editing;
-      usersAPI.updateUser(user)
+      webnautasAPI.updateUser(user)
       .then((response) => {
         if (response.status === 200) {
           user.editing = false;
@@ -80,7 +58,7 @@ angular.module('webnautas').controller('usersCtrl', ($scope, webnautasAPI) => {
       if (user.selected) return user;
     });
     selectedUsers.map(function(user) {
-      usersAPI.deleteUser(user.id).then((response) => {
+      webnautasAPI.deleteUser(user.id).then((response) => {
         if (response.status === 200) {
           $scope.users = users.filter((user) => {
             if (!user.selected) return user;

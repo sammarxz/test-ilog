@@ -11,30 +11,7 @@ angular.module('webnautas').controller('coursesCtrl', ($scope, webnautasAPI) => 
     });
   }
 
-  $scope.showForm = false;
   $scope.loading = true;
-
-  $scope.isSelected = function(courses) {
-    if (courses) {
-      return courses.some(function(course) {
-        return course.selected;
-      });
-    }
-    return;
-  }
-
-  $scope.setShowForm = function(course) {
-    if (!course) {
-      $scope.showForm = !$scope.showForm;
-    } else {
-      course.editing = !course.editing;
-    }
-  }
-
-  $scope.showCourse = function(course) {
-    if (course.editing) return 'view/course/form.html'
-    else return 'view/course/display.html';
-  }
 
   $scope.orderBy = function(type) {
     $scope.direction = !$scope.direction
@@ -61,9 +38,9 @@ angular.module('webnautas').controller('coursesCtrl', ($scope, webnautasAPI) => 
   }
 
   $scope.editCourse = function(keyEvent, course) {
-    if (keyEvent.which === 13) {
+    if (keyEvent.which === 13 && course.title && course.description && course.duration) {
       delete course.editing;
-      webnautasAPI.updateUser(course)
+      webnautasAPI.updateCourse(course)
       .then((response) => {
         if (response.status === 200) {
           course.editing = false;
