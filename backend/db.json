@@ -9,15 +9,16 @@
     },
     {
       "id": 2,
-      "name": "Sofia",
+      "name": "Sofia Marques",
       "phone": "(81) 99935-6728",
       "address": "Rua Mariano Ricardo da Costa",
-      "admission": "18/10/2020"
+      "admission": "18/10/2020",
+      "selected": false
     },
     {
       "name": "Bruna Castro",
       "phone": "(81) 99999-9999",
-      "address": "Alguma coisa",
+      "address": "Av. da República",
       "admission": "02/02/2020",
       "id": 3
     }
@@ -46,6 +47,13 @@
           "admission": "12/10/2020"
         }
       ]
+    },
+    {
+      "title": "Python para fodinhas",
+      "description": "Alguma coisa",
+      "duration": "20 horas",
+      "price": "200,00",
+      "id": 3
     }
   ]
 }

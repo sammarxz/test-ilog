@@ -1,0 +1,12 @@
+<td>
+  <div class="form-group">
+    <label class="form-checkbox">
+      <input type="checkbox" ng-model="course.selected">
+      <i class="form-icon"></i>
+    </label>
+  </div>
+</td>
+<td>{{ course.title | ellipsis: 20 }}</td>
+<td>{{ course.description | ellipsis: 20 }}</td>
+<td>{{ course.duration }}</td>
+<td>{{ course.price || 'Grátis' }}</td>

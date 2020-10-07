@@ -1,6 +1,6 @@
-angular.module('webnautas').controller('usersCtrl', ($scope, usersAPI) => {
+angular.module('webnautas').controller('usersCtrl', ($scope, webnautasAPI) => {
   const loadUsers = function() {
-    usersAPI.getUsers().then((response) => {
+    webnautasAPI.getUsers().then((response) => {
       if (response.status === 200) {
         const users = response.data.map(user => ({ ...user, editing: false }))
         $scope.users = users;

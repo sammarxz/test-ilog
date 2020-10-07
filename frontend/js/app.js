@@ -1,1 +1,1 @@
-angular.module('webnautas', []);
+angular.module('webnautas', ['ui.router']);
