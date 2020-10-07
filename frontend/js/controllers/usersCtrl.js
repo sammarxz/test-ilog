@@ -15,9 +15,12 @@ angular.module('webnautas').controller('usersCtrl', ($scope, webnautasAPI) => {
   $scope.loading = true;
 
   $scope.isSelected = function(users) {
-    return users.some(function(user) {
-      return user.selected;
-    });
+    if (users) {
+      return users.some(function(user) {
+        return user.selected;
+      });
+    }
+    return;
   }
 
   $scope.setShowForm = function(user) {

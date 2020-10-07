@@ -7,7 +7,7 @@
       <div class="input-group input-inline">
         <input class="form-input mr-2" type="text" ng-model="searchCourse" placeholder="Buscar...">
         <button class="btn btn-primary" ng-click="setShowForm()">Novo Curso</button>
-        <button class="btn btn-error btn-action ml-2" ng-show="isSelected(courses)">
+        <button class="btn btn-error btn-action ml-2" ng-show="isSelected(courses)" ng-click="removeCourses(courses)">
           <i class="icon icon-delete"></i>
         </button>
       </div>

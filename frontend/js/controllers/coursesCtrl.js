@@ -15,9 +15,12 @@ angular.module('webnautas').controller('coursesCtrl', ($scope, webnautasAPI) => 
   $scope.loading = true;
 
   $scope.isSelected = function(courses) {
-    return courses.some(function(course) {
-      return course.selected;
-    });
+    if (courses) {
+      return courses.some(function(course) {
+        return course.selected;
+      });
+    }
+    return;
   }
 
   $scope.setShowForm = function(course) {
@@ -41,6 +44,7 @@ angular.module('webnautas').controller('coursesCtrl', ($scope, webnautasAPI) => 
   $scope.addCourse = function(keyEvent, course) {
     if (keyEvent.which === 13) {
       if (course.title && course.description && course.duration) {
+        course.users = [];
         webnautasAPI.addCourse(course)
         .then((response) => {
           if (response.status === 200) {
@@ -77,7 +81,7 @@ angular.module('webnautas').controller('coursesCtrl', ($scope, webnautasAPI) => 
       if (course.selected) return course;
     });
     selectedCourses.map(function(course) {
-      webnautasAPI.deleteUser(course.id).then((response) => {
+      webnautasAPI.deleteCourse(course.id).then((response) => {
         if (response.status === 200) {
           $scope.courses = courses.filter((course) => {
             if (!course.selected) return course;
