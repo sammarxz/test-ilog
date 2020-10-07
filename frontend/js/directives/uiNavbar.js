@@ -3,7 +3,7 @@ angular.module('webnautas').directive('uiNavbar', function() {
     templateUrl: 'view/navbar.html',
     transclude: true,
     scope: {
-      title: '@'
+      title: '@',
     }
   }
 })

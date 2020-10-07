@@ -1,7 +1,7 @@
 <section ng-controller="usersCtrl">
-  <ui-navbar title="Alunos">
+  <ui-navbar title="Alunos" ng-model="searchUser">
     <div class="input-group input-inline">
-      <input class="form-input mr-2" type="text" ng-model="searchUser" placeholder="Buscar...">
+      <input class="form-input mr-2" type="text" ng-model="search" placeholder="Buscar...">
       <button class="btn btn-primary" ng-click="setShowForm()">Novo Usuário</button>
       <button class="btn btn-error btn-action ml-2" ng-show="isSelected(users)" ng-click="removeUsers(users)">
         <i class="icon icon-delete"></i>
