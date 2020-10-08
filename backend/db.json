@@ -13,12 +13,19 @@
       "address": "Av. da República",
       "admission": "02/05/2020",
       "id": 3
+    },
+    {
+      "name": "Sofia",
+      "phone": "(81) 37214-662",
+      "address": "Alguma coisa",
+      "admission": "02/02/2019",
+      "id": 4
     }
   ],
   "courses": [
     {
       "id": 1,
-      "title": "Python Ninja",
+      "title": "Python para Ninjas",
       "description": "Torne-se um Desenvolvedor Python nível ninja blaster master fodástico.",
       "duration": "20 hours",
       "price": "200,00",
@@ -29,6 +36,13 @@
           "phone": "(81) 99455-6776",
           "address": "Av. Mariano Ricardo da Costa",
           "admission": "12/10/2020"
+        },
+        {
+          "name": "Bruna Letícia",
+          "phone": "(81) 99999-9999",
+          "address": "Av. da República",
+          "admission": "02/05/2020",
+          "id": 3
         }
       ]
     },
@@ -62,14 +76,22 @@
       "price": "500,00",
       "users": [
         {
-          "name": "Bruna Letícia",
-          "phone": "(81) 99999-9999",
-          "address": "Av. da República",
-          "admission": "02/05/2020",
-          "id": 3
+          "id": 1,
+          "name": "Samuel Marques",
+          "phone": "(81) 99455-6776",
+          "address": "Av. Mariano Ricardo da Costa",
+          "admission": "12/10/2020"
         }
       ],
       "id": 3
+    },
+    {
+      "title": "Fundamentos do Design",
+      "description": "Aprenda os fundamentos do Design na prática",
+      "duration": "15 horas",
+      "price": "200,00",
+      "users": [],
+      "id": 4
     }
   ]
 }
