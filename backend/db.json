@@ -13,13 +13,6 @@
       "address": "Av. da República",
       "admission": "02/05/2020",
       "id": 3
-    },
-    {
-      "name": "Sofia",
-      "phone": "(81) 37214-662",
-      "address": "Alguma coisa",
-      "admission": "02/02/2019",
-      "id": 4
     }
   ],
   "courses": [
@@ -92,6 +85,22 @@
       "price": "200,00",
       "users": [],
       "id": 4
+    },
+    {
+      "title": "Testes para quem não testa",
+      "description": "Aprenda a testar seus códigos pow",
+      "duration": "20 horas",
+      "price": "200,00",
+      "users": [
+        {
+          "id": 1,
+          "name": "Samuel Marques",
+          "phone": "(81) 99455-6776",
+          "address": "Av. Mariano Ricardo da Costa",
+          "admission": "12/10/2020"
+        }
+      ],
+      "id": 5
     }
   ]
 }
